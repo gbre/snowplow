@@ -405,6 +405,7 @@ module Snowplow
         if start.nil? or _end.nil?
           "elapsed time n/a"
         else
+          require 'time_diff'
           Time.diff(start, _end, '%H %N %S')[:diff]
         end
       end
